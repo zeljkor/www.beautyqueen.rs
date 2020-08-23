@@ -1,0 +1,7 @@
+body {
+    overflow-y: hidden;
+}
+
+.ie {
+    display: block;
+}

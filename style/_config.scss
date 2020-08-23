@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+// Fonts
+$font-stack: 'Poppins', sans-serif;
+$second-font: 'Dancing Script', sans-serif;
+
+// Colors
+$text-color: #737373;
+$gold-color: #D3AD6D;
+// Transitions
+@mixin linear {
+    transition: all linear .2s;
+}
+@mixin linearFast {
+  transition: all linear .1s;
+}
+@mixin transform {
+    transition: transform .2s ease-in;
+}
+@mixin transformFast {
+  transition: transform .1s ease-in;
+}
+@mixin opacity {
+    transition: opacity .2s ease-in;
+}
+@mixin background {
+    transition: background-color .2s ease-in;
+}
+@mixin width {
+  transition: width .2s;
+}
+@mixin easeIn {
+  transition: all .1s ease-in;
+}
+@mixin visibility-opacity {
+  transition: visibility 0s, opacity 0.5s;
+}
+@mixin ease-in-out {
+  transition: all 1s ease-in-out;
+}
+// Media Query
+@mixin for-size($size){
+    @if $size == phone {
+        @media (min-width: 280px) and (max-width: 480px) { @content; }
+      } @else if $size == tablet {
+        @media (min-width: 481px) and (max-width: 736px) { @content; }
+      } @else if $size == tablet-portrait {
+        @media (min-width: 737px) and (max-width: 1023px) { @content; }
+      } @else if $size == tablet-landscape {
+        @media (min-width: 1024px) and (max-width: 1299px) { @content; }
+      } @else if $size == desktop {
+        @media (min-width: 1300px) and (max-width: 1799px) { @content; }
+      } @else if $size == big-desktop {
+        @media (min-width: 1800px) { @content; }
+      } @else if $size == all-big {
+        @media (min-width: 1024px) { @content; }
+      } @else if $size == rotate-landscape {
+        @media only screen 
+        and (min-device-width : 280px) 
+        and (max-device-width : 1023px) 
+        and (orientation : landscape) { @content; }  
+      }
+    }

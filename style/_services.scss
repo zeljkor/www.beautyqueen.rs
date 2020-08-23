@@ -1,0 +1,406 @@
+.box {
+    cursor: pointer;
+}
+// Portfolio gallery
+.portfolio {
+    @include linear;
+    & .nested {
+        display: flex;
+    }
+    &-img {
+        &_flex {
+            display: flex;
+            justify-content: center;
+        }
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+        justify-items: center;
+        grid-gap: 0;
+        @include for-size(tablet){
+            grid-template-columns: repeat(3, 33.3%);
+        }
+        @include for-size(tablet-portrait){
+            grid-template-columns: repeat(3, 33.3%);
+        }
+        @include for-size(tablet-landscape){
+            grid-template-columns: repeat(3, 33.3%);
+        }
+        @include for-size(desktop){
+            grid-template-columns: repeat(6, 16.66%);
+        }
+        @include for-size(big-desktop){
+            grid-template-columns: repeat(6, 16.66%);
+        }
+        & .item {
+            width: 100%;
+            overflow: hidden;
+            background: #000; 
+            img {
+                opacity: 0.6;
+                width: 100%;
+                height: 100%;
+                transform: scale(1.15);
+                transition: transform 0.5s, opacity 0.5s;
+                object-fit: cover;
+                &:hover {
+                    opacity: 1;
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+    position: relative;
+    top: -500px;
+    background: white;
+    display: none;
+    z-index: 1001;
+    @include easeIn;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    &.active {
+        display: inline-block;
+        position: fixed;
+        top: 55%;
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 90vh;
+        @include for-size(desktop){
+            top: 50%;
+        }
+        @include for-size(big-desktop){
+            top: 45%;
+        }
+    }  
+    &.goTop {
+        top: 45%;
+        @include linear;
+        @include for-size(rotate-landscape) {
+            top: 55%;
+        }
+    }
+    &-desc {
+        & .bg {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 300px;
+            object-fit: cover;
+            @include for-size(phone){
+                width: 150px;
+            }
+        }
+        &.active {
+            transform: translateY(0);
+            top: 0;
+            background: white;
+            width: 100%;
+            border-top: 1px solid #c2a169;
+            position: absolute;
+            padding-bottom: 40px;
+        }
+        padding: 20px;
+        transform: translateY(200vh);
+        h1 {
+            font-size: 1.6rem;
+            text-align: center;
+            text-transform: uppercase;
+            background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+            background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            @include for-size(phone){
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            @include for-size(tablet){
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            @include for-size(tablet-portrait){
+                font-size: 1rem;
+            }
+            @include for-size(tablet-landscape){
+                font-size: 1.2rem;
+            }
+            @include for-size(desktop){
+                font-size: 1.3rem;
+            }
+            @include for-size(big-desktop){
+                font-size: 1.3rem;
+            }
+        }
+        h2 {
+            font-size: 1.2rem;
+            color: $text-color;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            @include for-size(phone){
+                font-size: .7rem;
+                margin-bottom: 5px;
+            }
+            @include for-size(tablet){
+                font-size: .7rem;
+                margin-bottom: 5px;
+            }
+            @include for-size(tablet-portrait){
+                font-size: .7rem;
+            }
+            @include for-size(tablet-landscape){
+                font-size: .8rem;
+            }
+            @include for-size(desktop){
+                font-size: .9rem;
+            }
+            @include for-size(big-desktop){
+                font-size: .9rem;
+            }
+        }
+        &_layout {
+            display: flex;
+            justify-content: space-around;
+            @include for-size(phone){
+                flex-direction: column;
+            }
+        }
+    }
+}
+.services {
+    &-block {
+        position: relative;
+    }
+    &-overlay {
+        opacity: 0;
+        @include opacity;
+        z-index: 1;
+        &.active {
+            background: rgba(0,0,0,.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            z-index: 1000;
+            @include opacity;
+        }
+        &_close {
+            position: fixed;
+            right: 10px;
+            top: -5px;
+            font-size: 3.5rem;
+            transform: rotate(90deg);
+            cursor: pointer;
+            z-index: 100;
+            color: #c2a169;
+            @include linear;
+            &:hover {
+                color: white;
+                @include linear;
+            }
+            @include for-size(phone){
+                right: 5px;
+                top: -10px;
+                font-size: 3rem;
+            }
+        }
+    }
+}
+// Find more section
+.portfolio {
+    border: 3px solid $gold-color;
+    .findMore {
+        width: 45px;
+        height: 40px;
+        background: $gold-color;
+        display: inline-block;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        border-bottom-right-radius: 100%;
+        box-shadow: 0px 3px 5px white;
+        animation: pulse 1.2s infinite;
+        @include linear;
+        &:hover {
+            background: rgba(194, 154, 105, .6);
+            @include linear;
+            i {
+                color: white;
+            }
+        }
+        i {
+            margin-left: 8px;
+            margin-top: 8px;
+            color: white;
+            font-size: .9rem;
+            &:nth-child(2){
+                display: none;
+            }
+            @include for-size(phone){
+                &:nth-child(1){
+                    display: none;
+                }
+                &:nth-child(2){
+                    display: block;
+                }
+            }
+            @include for-size(tablet){
+                &:nth-child(1){
+                    display: none;
+                }
+                &:nth-child(2){
+                    display: block;
+                }
+            }
+            @include for-size(tablet-portrait){
+                &:nth-child(1){
+                    display: none;
+                }
+                &:nth-child(2){
+                    display: block;
+                }
+            }
+            @include for-size(tablet-landscape){
+                &:nth-child(1){
+                    display: none;
+                }
+                &:nth-child(2){
+                    display: block;
+                }
+            }
+            @include for-size(desktop){
+                margin-left: 12px;
+                margin-top: 10px;
+            }
+            @include for-size(big-desktop){
+                margin-left: 12px;
+                margin-top: 10px;
+            }
+        }
+    }
+    &-toggle {
+        position: absolute;
+        width: 2%;
+        top: 0;
+        height: 2%;
+        overflow: hidden;
+        z-index: 1;
+        opacity: 0;
+        transition: transform 0.5s, opacity 0.5s;
+        border-bottom: 15px solid white;
+        &.active {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 1;
+            padding-bottom: 20px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        p {
+            font-size: 1.1rem;
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            letter-spacing: 1px;
+            line-height: 1.7;
+            text-shadow: 1px 0px 2px black;
+            color: #c2a169;
+            @include for-size(phone){
+                line-height: 1.5;
+                font-size: .7rem;
+            }
+            @include for-size(tablet){
+                font-size: .9rem;
+            }
+            @include for-size(tablet-portrait){
+                font-size: .9rem;
+            }
+            @include for-size(all-big){
+                text-align: justify;
+                padding: 50px;
+            }
+        }
+        h1 {
+            font-size: 1rem;
+            margin-left: 35px;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            color: white;
+            font-weight: 300;
+            text-shadow: 1px 0px 2px black;
+            @include for-size(phone){
+                margin-bottom: 0;
+                font-size: .7rem;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+// Background images in more
+.portfolio {
+    &-eyelashes {
+        background: url(../img/eyelashesbg.jpg);
+        background-position: center;
+    }
+    &-massage {
+        background: url(../img/massagebg.jpg);
+        background-position: center;
+
+    }
+    &-manicure {
+        background: url(../img/manicurebg.jpg);
+        background-position: center;
+    }
+    &-sauna {
+        background: url(../img/saunabg.jpg);
+        background-position: bottom;
+    }
+    &-hair {
+        background: url(../img/hairbg.jpg);
+        background-position: center;
+    }
+    &-makeup {
+        background: url(../img/makeupbg.jpg);
+        background-position: center;
+    }
+    &-eyelashes {
+        background: url(../img/eyelashesbg2.jpg);
+        background-position: center;
+    }
+    &-depilation {
+        background: url(../img/depilationbg.png);
+        background-position: center;
+        .depilation-h1 {
+            color: $gold-color;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 10px;
+        }
+    }
+    &-eyebrow {
+        background: url(../img/eyebrowbg.jpg);
+        background-position: top;
+    }
+    &-solarium {
+        background: url(../img/solariumbg.jpg);
+        background-position: center;
+        strong {
+            text-transform: uppercase;
+            color: $gold-color;
+            margin: 10px 0;
+        }
+        p {
+            color: white;
+        }
+    }
+}
+
+
+

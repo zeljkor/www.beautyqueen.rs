@@ -1,0 +1,1502 @@
+.b--landing {
+    height: 100vh;
+    position: relative;
+    background: url(../img/home.jpg);
+    background-position: inherit;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include for-size(phone){
+        background-attachment: scroll;
+    }
+    @include for-size(tablet){
+        background-attachment: scroll;
+    }
+    &__inner {
+        display: flex;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        border: 2px solid $gold-color;
+        max-height: 80vh;
+        @include for-size(phone){
+            flex-direction: column;
+            top: 57%;
+        }
+        @include for-size(tablet){
+            flex-direction: column;
+            top: 55%;
+        }
+        @include for-size(desktop){
+            top: 55%;
+        }
+        &-left {
+            background: #1E1E1E;
+            width: 100%;
+            h1 {
+                background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+                background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+                padding-left: 40px;
+                color: white;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                font-size: 32px;
+                @include for-size(phone){
+                    font-size: 18px;
+                }
+                @include for-size(tablet){
+                    font-size: 20px;
+                }
+                @include for-size(tablet-portrait){
+                    font-size: 24px;
+                }
+            }
+            h2 {
+                margin: 20px 40px;
+                color: white;
+                letter-spacing: 2px;
+                font-weight: bolder;
+                font-size: 2rem;
+                font-family: $second-font;
+                opacity: 0;
+                transform: translateX(-40px);
+                &.appear {
+                    opacity: 1;
+                    transform: translateX(0);
+                    @include ease-in-out;
+                }
+                @include for-size(phone){
+                    font-size: 16px;
+                    margin: 10px 40px;
+                }
+                @include for-size(tablet){
+                    font-size: 18px;
+                }
+                @include for-size(tablet){
+                    font-size: 20px;
+                }
+            }
+            p {
+                background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+                background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                padding: 20px 40px;
+                line-height: 2;
+                letter-spacing: 1px;
+                font-weight: bolder;
+                margin: 20px 0;
+                font-size: 1.2rem;
+                @include for-size(phone){
+                    font-size: 11px;
+                    line-height: 1.3;
+                    padding: 15px 20px;
+                }
+                @include for-size(tablet){
+                    font-size: 12px;
+                    line-height: 1.3;
+                }
+                @include for-size(tablet-portrait){
+                    line-height: 1.4;
+                    font-size: 14px;
+                }
+                @include for-size(tablet-landscape){
+                    line-height: 1.5;
+                }
+                @include for-size(desktop){
+                    text-align: justify;
+                }
+                @include for-size(big-desktop){
+                    text-align: justify;
+                }
+            }
+            .landingBtn {
+                margin-left: 40px;
+                font-size: 1rem;
+                background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+                background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+                padding: 10px 20px;
+                color: white;
+                letter-spacing: 3px;
+                display: inline-block;
+                opacity: 0;
+                transform: translateY(40px);
+                display: none;
+                &.appear {
+                    opacity: 1;
+                    transform: translateY(0);
+                    @include ease-in-out;
+                }
+                @include for-size(phone){
+                    padding: 5px 10px;
+                    letter-spacing: 2px;
+                    font-size: 10px;
+                }
+                @include for-size(tablet){
+                    padding: 5px 10px;
+                    letter-spacing: 2px;
+                    font-size: 12px;
+                }
+                @include for-size(tablet-portrait){
+                    padding: 5px 10px;
+                    letter-spacing: 2px;
+                    font-size: 14px;
+                }
+                @include for-size(tablet-landscape){
+                    padding: 5px 10px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        &-right {
+            background: url(../img/bg.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: 20px;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(40px);
+            &.appear {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(0);
+                @include ease-in-out;
+            }
+            @include for-size(phone){
+                height: 35vh;
+            }
+            @include for-size(tablet){
+                height: 35vh;
+            }
+        }
+    }
+}
+// Services
+.services {
+    margin-top: 10px;
+    height: 100vh;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 10px;
+    h3 {
+        color: #fff;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 2rem;
+        position: absolute;
+        text-shadow: 2px 2px 2px #000;
+        font-size: 1.5rem;
+        @include for-size(phone){
+            font-size: .7rem;
+        }
+        @include for-size(tablet){
+            font-size: .7rem;
+        }
+        @include for-size(tablet-portrait){
+            font-size: 1.2rem;
+        }
+        @include for-size(all-big){
+            letter-spacing: 5px;
+        }
+    }
+    & .box {
+        width: 100%;
+        text-decoration: none;
+        position: relative;
+        @include linear;
+        &:hover {
+            opacity: .7;
+            @include linear;
+        }
+        h4 {
+            color: #fff;
+            text-align: center;
+            font-size: 0;
+            letter-spacing: 3px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 0;
+            opacity: 0;
+            text-shadow: 2px 2px 2px #000;
+            @include linear;
+        }
+        h5 {
+            color: #fff;
+            text-align: center;
+            font-size: 0;
+            color: #fff;
+            letter-spacing: 5px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            bottom: 0;
+            opacity: 0;
+            text-shadow: 2px 2px 2px #000;
+            @include linear;
+        }
+        &:hover {
+            h4 {
+                opacity: 1;
+                top: 40%;
+                font-size: 1rem;
+                @include linear;
+                @include for-size(tablet){
+                    font-size: .5rem;
+                }
+                @include for-size(phone){
+                    font-size: .5rem;
+                }
+            }
+            h5 {
+                opacity: 1;
+                bottom: 40%;
+                font-size: 1rem;
+                @include linear;
+                @include for-size(tablet){
+                    font-size: .5rem;
+                    bottom: 40%;
+                }
+                @include for-size(phone){
+                    font-size: .5rem;
+                    bottom: 40%;
+                }
+            }
+        }
+        &-1 {
+            background: url(../img/massage.jpg);
+            background-position: center;
+            background-size: cover;
+            h3 {
+                bottom: 5px;
+                right: 3px;
+            }
+        }
+        &-2 {
+            background: url(../img/eyelashes.jpg);
+            background-position: center;
+            background-size: cover;
+            h3 {
+                top: 5px;
+                left: 3px;
+            }
+        }
+        &-3 {
+            background: url(../img/sauna.jpg);
+            background-position: bottom;
+            background-size: cover;
+            h3 {
+                top: 5px;
+                right: 3px;
+            }
+        }
+        &-4 {
+            background: url(../img/makeup.jpg);
+            background-position: center;
+            background-size: cover;
+            h3 {
+                bottom: 5px;
+                left: 3px;
+            }
+        }
+        &-5 {
+            background: url(../img/hair.jpg);
+            background-position: bottom;
+            background-size: cover;
+            h3 {
+                top: 5px;
+                right: 3px;
+            }
+        }
+        &-6 {
+            background: url(../img/eyebrow.jpg);
+            background-position: top;
+            background-size: cover;
+            h3 {
+                bottom: 5px;
+                left: 3px;
+            }
+        }
+        &-7 {
+            background: url(../img/depilation.jpg);
+            background-position: center;
+            background-size: cover;
+            h3 {
+                top: 5px;
+                right: 3px;
+            }
+        }
+        &-8 {
+            background: url(../img/manicure.jpg);
+            background-position: center;
+            background-size: cover;
+            h3 {
+                bottom: 5px;
+                left: 3px;
+            }
+        }
+        &-9 {
+            background: url(../img/solarium.jpg);
+            background-position: center;
+            background-size: cover;
+            h3 {
+                top: 5px;
+                right: 3px;
+            }
+        }
+    }
+}
+// Alfa
+.alfa {
+    position: relative;
+    margin: 80px auto;
+    width: 90%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    z-index: 1;
+    @include for-size(phone){
+        grid-gap: 5px;
+        margin: 40px auto;
+        width: 90%;
+        grid-template-rows: repeat(1, 1fr);
+    }
+    @include for-size(tablet){
+        grid-gap: 5px;
+        margin: 40px auto;
+        width: 90%;
+        grid-template-rows: repeat(1, 1fr);
+    }
+    &-img {
+        grid-row: span 2;
+        background: url(../img/alfa.jpg);
+        background-position: center;
+        background-size: cover;
+        z-index: 2;
+        @include for-size(phone){
+            grid-row: 1/2;
+        }
+        @include for-size(tablet){
+            grid-row: 1/2;
+        }
+    }
+    &-portfolio {
+        grid-column-start: 2;
+        grid-column: span 2;
+        display: flex;
+        flex-wrap: wrap;
+        @include for-size(phone){
+            grid-column: span 3;
+            display: inline-block;
+        }
+        @include for-size(tablet){
+            grid-column: span 3;
+            display: inline-block;
+        }
+        & img {
+            width: 32%;
+            z-index: 2;
+            object-fit: cover;
+        }
+    }
+    &-heading {
+        background: rgb(230,230,230);
+        background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 68%);
+        padding: 20px;    
+        grid-column: span 2;
+        // Animation property
+        opacity: 0;
+        transform: translateY(40px);
+        &.appear {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+            @include ease-in-out;
+        }
+        h1 {
+            font-size: 2rem;
+            color: $text-color;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            margin-left: 100px;
+            @include for-size(tablet-portrait){
+                font-size: 1.5rem;
+            }
+            @include for-size(phone){
+                font-size: 1rem;
+                margin-left: 20px;
+            }
+            @include for-size(tablet){
+                margin-left: 20px;
+            }
+        }
+        p {
+            font-size: 1rem;
+            line-height: 2;
+            color: $text-color;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            &:nth-child(3){
+                padding-left: 60px;
+                @include for-size(phone){
+                    padding-left: 0;
+                }
+                @include for-size(tablet-portrait){
+                    padding-left: 0;
+                }
+            }
+            @include for-size(phone){
+                font-size: .7rem;
+                line-height: 1.4;
+            }
+            @include for-size(tablet-portrait){
+                font-size: .8rem;
+            }
+            @include for-size(all-big){
+                text-align: justify;
+            }
+        }
+    }
+    // Alfa button
+    .alfaBtn {
+        cursor: pointer;
+        background: #f9f9f9;
+        border: 1px solid $text-color;
+        font-weight: bolder;
+        border-radius: 1px;
+        padding: .7em 1.2em;
+        color: $text-color;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 14px;
+        font-weight: lighter;
+        position: relative;
+        z-index: 1;
+        outline: none;
+        @include linear;
+        @include for-size(phone){
+            padding: .5em .8em;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+        @include for-size(tablet){
+            padding: .5em .8em;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        @include for-size(tablet-portrait){
+            padding: .5em 1em;
+            font-size: 12px;
+        }
+        @include for-size(tablet-landscape){
+            padding: .5em 1em;
+            font-size: 12px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.1);
+            transform: scale(0);
+            z-index: -1;
+            @include transform;
+        }
+        &:hover {
+            color: white;
+            border: 1px solid white;
+            @include linear;
+            &::after {
+                transform: scale(1);
+            }
+        }
+    }
+    // Alfa popup
+    &-popup {
+        display: flex;
+        margin: 40px 0;
+        position: fixed;
+        top: 49%;
+        left: 50%;
+        background: white;
+        width: 90%;
+        max-height: 90%;
+        transform: translate(-50%, -50%);
+        border-radius: 3px;
+        box-shadow: 5px 5px 5px black;
+        display: none;
+        &.active {
+            display: flex;
+            z-index: 1001;
+        }
+        &_description {
+            width: 40%;
+            background: linear-gradient(90deg, $gold-color 0%, white 68%);
+            padding: 40px;
+            @include for-size(phone){
+                width: 50%;
+                padding: 20px;
+            }
+            h1 {
+                color: $text-color;
+                text-align: center;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                margin-bottom: 40px;
+                font-size: 2rem;
+                @include for-size(phone){
+                    font-size: 1rem;
+                    margin-bottom: 20px;
+                }
+                @include for-size(tablet){
+                    font-size: 1.3rem;
+                }
+                @include for-size(tablet-portrait){
+                    font-size: 1.6rem;
+                }
+            }
+            p {
+                letter-spacing: 1px;
+                line-height: 2;
+                font-size: 1.2rem;
+                position: relative;
+                @include for-size(phone){
+                    font-size: .7rem;
+                    line-height: 1.3;
+                }
+                @include for-size(tablet){
+                    font-size: .8rem;
+                    line-height: 1.6;
+                }
+                @include for-size(tablet-portrait){
+                    font-size: .9rem;
+                    line-height: 1.6;
+                }
+                &::after {
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    content: '';
+                    width: 75px;
+                    height: 3px;
+                    background: $gold-color;
+                    @include for-size(desktop){
+                        height: 10px;
+                        width: 175px;
+                        bottom: -20px;
+                    }
+                    @include for-size(big-desktop){
+                        height: 10px;
+                        width: 175px;
+                        bottom: -20px;
+                    }
+                }
+            }
+        }
+        &_gallery {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @include for-size(phone){
+                width: 50%;
+            }
+        }
+        &_galleryHighlight {
+            height: 50vh;
+            object-fit: contain;
+        }
+        &_galleryPreview {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            img {
+                height: 15vh;
+                width: 20%;
+                object-fit: contain;
+                flex-grow: 1;
+                opacity: .4;
+                border-right: 2px solid $gold-color;
+                border-bottom: 2px solid $gold-color;
+                cursor: pointer;
+                @include opacity;
+                &:first-child {
+                    border-left: 2px solid $gold-color;
+                }
+                &:nth-child(6){
+                    border-left: 2px solid $gold-color;
+                }
+                &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5){
+                    border-top: 2px solid $gold-color;
+                }
+                &.alfa-active {
+                    opacity: 1;
+                }
+                &:hover {
+                    opacity: 1;
+                    @include opacity;
+                }
+            }
+        }
+        &_x {
+            font-size: 2.5rem;
+            right: 0;
+            position: absolute;
+            color: white;
+            background: $gold-color;
+            padding: 0 5px;
+            z-index: 50;
+            @include linear;
+            @include for-size(phone){
+                font-size: 2rem;
+            }
+            &:hover {
+                cursor: pointer;
+                color: $gold-color;
+                background: darken(white, 3%);
+                border-bottom-left-radius: 35%;
+                @include linear;
+            }
+        }
+    }
+}
+// Vacumslim
+.mesmerie {
+    &-block {
+        background: url('../img/mesmerie.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 60vh;
+        position: relative;
+        border: 4px solid $gold-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 1;
+        @include for-size(phone){
+            background-attachment: scroll;
+            background-position: left;
+        }
+        @include for-size(tablet){
+            background-position: center;
+            height: 50vh;
+        }
+        @include for-size(tablet-portrait){
+            background-position: left;
+        }
+        @include for-size(tablet-landscape){
+            background-position: left;
+        }
+    }
+    &-heading {
+        border: 4px solid $gold-color;
+        padding: 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        @include for-size(phone){
+            padding: 40px 50px;
+        }
+        @include for-size(tablet){
+            padding: 40px 20px;
+        }
+        span {
+            position: absolute;
+            bottom: 5px;
+            right: 15px;
+            cursor: pointer;
+            color: $gold-color;
+            font-size: 24px;
+            animation: pulse 1.2s infinite;
+            @include for-size(phone){
+                font-size: 20px;
+                bottom: 0;
+                right: 5px;
+            }
+            @include for-size(tablet){
+                bottom: 0;
+                right: 5px;
+            }
+            @include for-size(tablet-portrait){
+                bottom: 0;
+                right: 5px;
+            }
+            i {
+                animation: pulse 1.2s infinite;
+                &:hover {
+                    animation: none;
+                }
+            }
+        }
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 4rem;
+            background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+            background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: lighter;
+            @include for-size(phone){
+                font-size: .8rem;
+                margin-bottom: 10px;
+            }
+            @include for-size(tablet){
+                font-size: 1rem;
+            }
+            @include for-size(tablet-portrait){
+                font-size: 2rem;
+            }
+            @include for-size(tablet-landscape){
+                font-size: 3rem;
+            }
+        }
+        h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1rem;
+            background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+            background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: lighter;
+            @include for-size(phone){
+                font-size: .5rem;
+                letter-spacing: 1px;
+            }
+            @include for-size(tablet){
+                font-size: .5rem;
+                letter-spacing: 1px;
+            }
+            @include for-size(tablet-portrait){
+                font-size: .7rem;
+                letter-spacing: 1px;
+            }
+            @include for-size(tablet-landscape){
+                font-size: .8rem;
+                letter-spacing: 1px;
+            }
+        }
+        &_around {
+            padding: 50px;
+            background: rgba(0,0,0,.5);
+            z-index: 2;
+            position: relative;
+            opacity: 0;
+            transform: translateX(40px);
+            &.appear {
+                opacity: 1;
+                transform: translateX(0);
+                @include ease-in-out;
+            }
+            @include for-size(phone){
+                padding: 20px;
+            }
+            @include for-size(tablet){
+                padding: 20px;
+            }
+            @include for-size(tablet-portrait){
+                padding: 30px;
+            }
+        }
+    }
+    &-flip {
+        position: absolute;
+        width: 0;
+        height: 0;
+        background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+        background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+        top: 0;
+        left: 0;
+        border-bottom-left-radius: 20%;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        padding: 20px;
+        @include linearFast;
+        @include for-size(phone){
+            padding: 10px;
+        }
+        @include for-size(tablet){
+            padding: 10px;
+        }
+        @include for-size(tablet-portrait){
+            padding: 10px;
+        }
+        &.active { 
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+            @include linearFast;
+        }
+        span {
+            transform: rotate(45deg);
+            color: black;
+            animation: pulse 1.2 infinite;
+        }
+    }
+    &-logo {
+        position: absolute;
+        opacity: .2;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            @include for-size(desktop){
+                width: 85px;
+                height: 85px;
+            }
+            @include for-size(big-desktop){
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+    &-qu {
+        h3 {
+            font-size: .9rem;
+            font-weight: lighter;
+            @include for-size(phone){
+                font-size: .7rem;
+            }
+            @include for-size(tablet){
+                font-size: .7rem;
+            }
+            @include for-size(tablet-portrait){
+                font-size: .8rem;
+            }
+            @include for-size(desktop){
+                letter-spacing: 2px;
+            }
+            @include for-size(big-desktop){
+                letter-spacing: 2px;
+            }
+        }
+        p {
+            font-size: .8rem;
+            letter-spacing: 1px;
+            margin: 10px 0;
+            @include for-size(phone){
+                display: none;
+            }
+            @include for-size(tablet){
+                display: none;
+            }
+            @include for-size(tablet-portrait){
+                display: none;
+            }
+            @include for-size(tablet-landscape){
+                display: none;
+            }
+        }
+    }
+    & .hoverLogo {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        visibility: hidden;
+        opacity: 0;
+        @include visibility-opacity;
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            @include visibility-opacity;
+        }
+    }
+    // Mesmerie button
+    .mesmerieBtn {
+        outline: none;
+        padding: 5px 7px;
+        border: 1px solid black;
+        color: black;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+        background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        margin-top: 20px;
+        @include linear;
+        @include for-size(phone){
+            font-size: 7px;
+        }
+        @include for-size(tablet){
+            font-size: 8px;
+        }
+        @include for-size(tablet-portrait){
+            font-size: 8px;
+        }
+        @include for-size(tablet-landscape){
+            font-size: 8px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            background: rgba(0,0,0,.1);
+            z-index: -1;
+            @include transform;
+        }
+        &:hover {
+            color: white;
+            border: 1px solid white;
+            @include linear;
+            &::after {
+                transform-origin: left;
+                transform: scaleX(1);
+            }
+        }
+    }
+    &-gallery {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 600px;
+        visibility: hidden;
+        opacity: 0;
+        @include visibility-opacity;
+        @include for-size(phone){
+            flex-direction: row-reverse;
+        }
+        @include for-size(tablet){
+            width: 160px;
+        }
+        @include for-size(tablet-portrait){
+            width: 200px;
+        }
+        @include for-size(tablet-landscape){
+            width: 400px;
+        }
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            @include visibility-opacity;
+        }
+        img {
+            width: 300px;
+            height: 200px;
+            &:nth-child(4){
+                transform: scale(-1, 1);
+            }
+            @include for-size(phone){
+                width: 140px;
+                height: 80px;
+                object-fit: cover;
+            }
+            @include for-size(tablet){
+                width: 80px;
+                height: 130px;
+                object-fit: cover;
+            }
+            @include for-size(tablet-portrait){
+                width: 100px;
+                object-fit: cover;
+            }
+            @include for-size(tablet-landscape){
+                width: 200px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+@-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+      transform: scale(0.95);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        transform: scale(0.1);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        transform: scale(0.95);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+      transform: scale(1);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        transform: scale(0.95);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        transform: scale(1);
+    }
+  }
+  // Vacuslim popup
+  .vacuslim-popup {
+      width: 90%;
+      position: fixed;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1001;
+      border: 5px solid $gold-color;
+      max-height: 85vh;
+      overflow: hidden;
+      display: none;
+      &.active {
+          display: block;
+      }
+      & .mesmerie-x {
+          position: absolute;
+          right: 0;
+          background: $gold-color;
+          padding: 5px 10px;
+          color: white;
+          font-size: 1.3rem;
+          z-index: 50;
+          @include linear;
+          &:hover {
+              cursor: pointer;
+              color: $gold-color;
+              background: white;
+              border-bottom-left-radius: 35%;
+              @include linear;
+          }
+      }
+      &_left {
+          background: url(../img/t11.jpg);
+          background-position: center;
+          background-size: cover;
+          width: 100%;
+          span {
+            background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+            background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;   
+          }
+          p {
+              font-size: .7rem;
+              padding: 20px;
+              color: lighten(silver, 10%);
+              text-align: justify;
+              line-height: 1.6;
+              @include for-size(tablet){
+                font-size: .9rem;
+              }
+              @include for-size(tablet-portrait){
+                font-size: 1rem;
+              }
+              @include for-size(all-big){
+                  font-size: 1.2rem;
+                  line-height: 2;
+                  padding: 40px;
+              }
+          }
+          h1 {
+              font-size: 1.3rem;
+              background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+              background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;   
+              text-align: center;
+              letter-spacing: 4px;
+              text-transform: uppercase;
+              padding-top: 20px;
+              position: relative;
+              @include for-size(all-big){
+                  font-size: 2rem;
+              }
+              &::after {
+                  position: absolute;
+                  content: '';
+                  bottom: -5px;
+                  left: 45%;
+                  width: 10%;
+                  height: 3px;
+                  background: $gold-color;
+              }
+          }
+          h2 {
+              font-size: 1.3rem;
+              font-family: $second-font;
+              letter-spacing: 3px;
+              text-align: center;
+              margin-top: 10px;
+              color: white;
+              @include for-size(all-big){
+                  font-size: 2rem;
+              }
+          }
+      }
+      &_right {
+          display: flex;
+          justify-content: space-evenly;
+          img {
+              width: 33.3%;
+              height: 100px;
+              object-fit: cover;
+              @include for-size(tablet){
+                height: 200px;
+              }
+              @include for-size(tablet-portrait){
+                height: 250px;
+              }
+              @include for-size(all-big){
+                height: 300px;
+              }
+          }
+      }
+  }
+// Associates
+.associates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0;
+    img {
+        width: 260px;
+        @include transform;
+        @include for-size(phone){
+            margin-bottom: 20px;
+            height: 200px;
+            object-fit: contain;
+        }
+        @include for-size(tablet){
+            margin-bottom: 20px;
+            height: 200px;
+            object-fit: contain;
+        }
+    }
+    & .as {
+        @include transform;
+        &:hover {
+            @include transform;
+            transform: scale(.9);
+        }
+        &-1 {
+            img {
+                height: 60px;
+                object-fit: contain;
+            }
+        }
+        &-2 {
+            img {
+                height: 115px;
+                object-fit: contain;
+                margin-top: 40px;
+            }
+        }
+        &-5 {
+            img {
+                height: 135px;
+                object-fit: contain;
+            }
+        }
+        &-6 {
+            img {
+                height: 200px;
+                object-fit: contain;
+            }
+        }
+        &-7 {
+            img {
+                height: 230px;
+            }
+        }
+    }
+    &-heading {
+        margin: 40px 0;
+        text-align: center;
+        h1 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin: 10px 0;
+            color: $text-color; 
+            position: relative;
+            display: inline-block;
+            &::after {
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                content: '';
+                width: 100px;
+                height: 2px;
+                background: $gold-color;
+                @include for-size(all-big){
+                    height: 4px;
+                    width: 120px;
+                }
+            }
+            @include for-size(phone){
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+// More
+.more {
+    padding: 5px 10px;
+    border: 1px solid $gold-color;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline;
+    margin: 20px;
+    cursor: pointer;
+    color: $gold-color;
+    font-weight: lighter;
+    outline: none;
+}
+.arrow {
+        color: $gold-color;
+        @include transformFast;
+        &.active {
+            transform: rotate(180deg);
+            @include transformFast;
+        }
+}
+//Wedding
+.block--wedding {
+    display: flex;
+    flex-direction: column;
+    @include for-size(all-big){
+        flex-direction: row;
+    }
+    &__left {
+        width: 100%;
+        padding: 40px;
+        span {
+            font-weight: bolder;
+            &:nth-child(5){
+                background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+                background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                font-weight: bolder;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 2.3rem;
+            background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+            background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+            position: relative;
+            @include for-size(phone){
+                font-size: 1rem;
+            }
+            @include for-size(tablet){
+                font-size: 1.1rem;
+            }
+            @include for-size(tablet-portrait){
+                font-size: 1.2rem;
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: -10px;
+                border-bottom: 4px solid silver;
+                width: 135px;
+                @include for-size(phone){
+                    border-width: 2px;
+                    width: 60px;
+                }
+                @include for-size(tablet){
+                    border-width: 2px;
+                    width: 60px;
+                }
+                @include for-size(tablet-portrait){
+                    border-width: 2px;
+                    width: 60px;
+                }
+            }
+        }
+        p {
+            text-align: justify;
+            @include for-size(phone){
+                text-align: left;
+            }
+            @include for-size(tablet){
+                text-align: left;
+            }
+            @include for-size(all-big){
+                font-size: 1.1rem;
+                line-height: 1.8;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    &__right {
+        width: 100%;
+        background: url(../img/wedding.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 50vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-left: 4px solid $gold-color;
+        border-right: 4px solid $gold-color;
+        border-bottom: 4px solid $gold-color;
+        opacity: 0;
+        -webkit-transform: translateY(-40px);
+        -ms-transform: translateY(-40px);
+        transform: translateY(-40px);
+        @include for-size(phone){
+            border-top: 4px solid $gold-color;
+            opacity: 0;
+            -webkit-transform: translateX(-40px);
+            -ms-transform: translateX(-40px);
+            transform: translateX(-40px);
+            &.appear {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(0);
+                @include ease-in-out;
+            }
+        }
+        @include for-size(tablet){
+            border-top: 4px solid $gold-color;
+            opacity: 0;
+            transform: translateX(-40px);
+            &.appear {
+                opacity: 1;
+                transform: translateX(0);
+                @include ease-in-out;
+            }
+        }
+        @include for-size(tablet-portrait){
+            border-top: 4px solid $gold-color;
+            opacity: 0;
+            transform: translateX(-40px);
+            &.appear {
+                opacity: 1;
+                transform: translateX(0);
+                @include ease-in-out;
+            }
+        }
+        &.appear {
+            opacity: 1;
+            transform: translateY(0);
+            @include ease-in-out;
+        }
+        img {
+            width: 50px;
+            height: 8vh;
+            border-radius: 100%;
+            object-fit: cover;
+            margin-left: 10px;
+            box-shadow: 2px 5px 3px black;
+            opacity: .9;
+            @include for-size(tablet){
+                width: 80px;
+            }
+            @include for-size(tablet-portrait){
+                width: 100px;
+            }
+            @include for-size(all-big){
+                width: 80px;
+            }
+        }
+        h1 {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 1.5rem;
+            background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+            background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+            border-radius: 100%;
+            line-height: 2;
+            padding: 5px;
+            color: white;
+            font-weight: lighter;
+            box-shadow: 5px 0px 1px white;
+            @include for-size(tablet-portrait){
+                right: 10px;
+                bottom: 10px;
+                font-size: 2rem;
+                line-height: 2.2;
+            }
+            @include for-size(all-big){
+                right: 25px;
+                bottom: 15px;
+                font-size: 2rem;
+                line-height: 2.3;
+            }
+        }
+    }
+}
+// Map
+.map {
+    margin-top: 40px;
+    @include for-size(phone){
+        iframe {
+            height: 300px;
+            z-index: 1;
+            position: relative;
+        }
+    }
+}
+// Footer 
+footer {
+    padding: 20px 0;
+    background: rgb(224,224,224);
+    background: linear-gradient(90deg, rgba(224,224,224,1) 17%, rgba(249,249,249,1) 78%);
+    text-align: center;
+    h2 {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        color: $text-color;
+        font-weight: lighter;
+        @include for-size(phone){
+            font-size: .8rem;
+        }
+    }
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $text-color;
+    }
+}
+

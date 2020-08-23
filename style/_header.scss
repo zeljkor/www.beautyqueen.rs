@@ -1,0 +1,192 @@
+.nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1002 !important;
+    .logo {
+        background: rgba(0,0,0,.8);
+        @include linear;
+        @include for-size(all-big){
+            height: 100px;
+        }
+        .logoImg {
+            width: 150px;
+            margin-left: 20px;
+            margin-top: 5px;
+            @include linear;
+            &.active {
+                width: 100px;
+                @include linear;
+            }
+        }
+        &.active {
+            @include linear;
+            @include for-size(all-big){
+                height: 65px;
+            }
+        }
+    }
+    &-list {
+        z-index: 999 !important;
+        position: absolute;
+        right: 0;
+        background: rgba(0,0,0,.8);
+        transform: translateX(100%);
+        width: 50%;
+        text-align: center;
+        height: 94vh;
+        @include linear;
+        &.active {
+            transform: translateX(0);
+            z-index: 999 !important;
+            @include linear;
+        } 
+        @include for-size(phone){
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        @include for-size(tablet){
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        @include for-size(tablet-portrait){
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        @include for-size(all-big){
+            transform: translateX(0);
+            background: none;
+            top: 0;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+            width: 65%;
+            &.shrink {
+                top: 0;
+                height: 65px;
+            }
+        }
+        li {
+            @include for-size(phone){
+                margin-top: -150px;
+            }
+            @include for-size(tablet){
+                margin-top: -150px;
+            }
+            @include for-size(tablet-portrait){
+                margin-top: -150px;
+            }
+        }
+    }
+    &-links {
+        background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+        background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+        transition: font-size .2s;
+        @include for-size(phone){
+            position: relative;
+            font-size: .8rem;
+            top: -40px;
+        }
+        @include for-size(tablet){
+            font-size: .8rem;
+            margin-bottom: 60px;
+        }
+        @include for-size(tablet-portrait){
+            font-size: .8rem;
+            margin-bottom: 60px;
+        }
+        &.shrink {
+            margin-top: 23px;
+            font-size: .8rem;
+            transition: font-size .2s;
+        }
+        @include for-size(all-big){
+            margin-top: 35px;
+        }
+    }
+    .burger {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        @include linear;
+        &.active {
+            top: 15px;
+            @include linear;
+        }
+        .bar {
+            width: 30px;
+            height: 3px;
+            border-radius: 3px;
+            display: block;
+            background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+            background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+            margin: 5px;
+            transition: width .2s linear, transform .2s linear, opacity .2s linear;
+            &.shrink {
+                width: 25px;
+                transition: width .2s linear, transform .2s linear, opacity .2s linear;
+            }
+            &-1 {
+                @include transform;
+                &.active {
+                    transform: rotate(-45deg) translate(-5px, 6px);
+                }
+            }
+            &-2 {
+                @include opacity;
+                &.active {
+                    opacity: 0;
+                }
+            }
+            &-3 {
+                @include transform;
+                &.active {
+                    transform: rotate(45deg) translate(-6px, -6px);
+                }
+            }
+        }
+        @include for-size(all-big){
+            display: none;
+        }
+    }
+}
+    // Hover
+    .nav-links {
+        position: relative;
+        color: #B99960;
+        top: 35px;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 33px;
+                width: 100%;
+                height: 2px;
+                background: -webkit-gradient(linear, left top, right top, color-stop(49%, #c2a169), color-stop(82%, #f0dcba));
+                background: linear-gradient(90deg, #c2a169 49%, #f0dcba 82%);
+                border-radius: 5px;
+                transform: scaleX(0);
+                transform-origin: right;
+                @include transform;
+            }
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+            &.shrink {
+                top: 20px;
+                &::after {
+                    top: 20px;
+                    height: 1px;
+                }
+            }
+    }
